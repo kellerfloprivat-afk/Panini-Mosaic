@@ -189,7 +189,28 @@
 // ====== FIREBASE KONFIGURATION ======
 // Ersetze das Objekt unten mit deinem eigenen firebaseConfig aus der Firebase-Konsole.
 // Solange hier PASTE_YOUR_CONFIG_HERE steht, läuft die Seite im Offline-Modus (nur lokal gespeichert).
-const firebaseConfig = "PASTE_YOUR_CONFIG_HERE";
+const firebaseConfig = // Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDrPd3I5lA7Z512U-HngU-H6_caQpWQX1c",
+  authDomain: "panini-mosaic.firebaseapp.com",
+  databaseURL: "https://panini-mosaic-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "panini-mosaic",
+  storageBucket: "panini-mosaic.firebasestorage.app",
+  messagingSenderId: "354158521444",
+  appId: "1:354158521444:web:408e7a16d6565a82d74371",
+  measurementId: "G-MCRKR8HGEV"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);;
 
 let db = null;
 let firebaseReady = false;
